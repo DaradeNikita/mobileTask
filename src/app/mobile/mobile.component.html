@@ -1,0 +1,44 @@
+
+<h3 class="mobHeading  text-center  mt-5">Mobile Products</h3><div class="container mt-5">
+<div class="row">
+  <div class="col-md-12">
+     <div class="card mb-4" *ngFor = "let mobile of mobileArray">
+         <!-- <div class="card-body"> -->
+            <div class="row">
+                <div class="col-md-4">
+                   <figure class="mobImg p-4">
+                    <img [src]="mobile.image" *ngIf ="mobile.image.length > 0 ; else noImg"
+                    [alt]="mobile.name" [title] = "mobile.name" class="img-fluid">
+                   </figure>
+                    <ng-template #noImg>
+                      <p class="noImg text-muted d-flex justify-content-center align-items-center">
+                        No preview is available
+                      </p>
+                    </ng-template>
+                </div>
+              <div class="col-md-8">
+                <div class="row">
+                    <div class="col-md-8 mt-4">
+                       <h3><strong class="mobName "> {{mobile.name}}</strong></h3>
+                       <h5 >Heighlights</h5>
+                     <ul>
+                      <li>128GB storage</li>
+                      <li>13MP + 2MP | 5MP Front Camera</li>
+                      <li>16.51 cm (6.5 inch) HD Display</li>
+                      <li>5000 mAh Lithium-Ion Battery</li>
+                      <li>Mediatek Helio P35 Processor</li>
+                     </ul>
+                     <!-- <button class="btn btn-primary ">Add To Cart</button> -->
+                    </div>
+                    <div class="col-md-4 mt-4">
+                     <h3>Rs.{{mobile.price}}</h3>
+                     
+                    </div>
+                </div>
+              </div>
+            </div>
+         <!-- </div> -->
+        </div>
+    </div>
+</div>
+</div>
